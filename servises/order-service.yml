@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: order-service
+
+firestore:
+  project-id: ${FIRESTORE_PROJECT_ID:kavindu-cluod}
+  orders-collection: ${FIRESTORE_ORDERS_COLLECTION:orders}
+
+storage:
+  provider: ${STORAGE_PROVIDER:gcs} # local | gcs
+  gcs:
+    project-id: ${GCS_PROJECT_ID:kavindu-cluod}
+    bucket: ${GCS_BUCKET:laptopimgbucket}
+    credentials-path: ${GCS_CREDENTIALS_PATH:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
